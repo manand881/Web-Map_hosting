@@ -2,50 +2,46 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-  <!-- adding leaflet cdn -->
-  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-  <!-- adding bootstrap cdn -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <title>Project Demo</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+	<!-- adding leaflet cdn -->
+	<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+	<!-- adding bootstrap cdn -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<title>Project Demo</title>
 </head>
 
-<body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark " id='navbar'>
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">GIS Hosting Demo</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-link navbarelement" href="#"
-            onclick="orthophotovisible=toggleorthophoto(addortho,orthophotovisible);">Toggle OrthoPhoto</a>
-          <label class="switch"><input type="checkbox" />
-            <div></div>
-          </label>
-          <a class="nav-link navbarelement " href="#" onclick="demvisible=toggledem(adddem,demvisible);">Toggle DEM</a>
-          <label class="switch"><input type="checkbox" />
-            <div></div>
-          </label>
-          <a class="nav-link navbarelement" href="#" onclick="demvisible=toggledem(adddem,demvisible);">Toggle
-            GeoJson/Shapefile</a>
-          <label class="switch"><input type="checkbox" />
-            <div></div>
-          </label>
-          <a class="nav-link navbarelement" href="ProjectFiles.zip" download>Download Files</a>
-        </div>
-      </div>
-    </div>
-  </nav>
-  <div id='map'></div>
-  <script src='Js/app.js'></script>
+<body onresize="setdev();">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark " id='navbar'>
+		<div class="container-fluid">
+			<a class="navbar-brand row align-items-center" href="#">GIS Hosting Demo</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+				aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+				<div class="navbar-nav row align-items-center">
+					<a class="nav-link navbarelement padder" href="#"
+						onclick="orthophotovisible=toggleorthophoto(addortho,orthophotovisible);">Toggle OrthoPhoto</a>
+
+					<a class="nav-link navbarelement padder" href="#"
+						onclick="demvisible=toggledem(adddem,demvisible);">Toggle DEM</a>
+
+					<a class="nav-link navbarelement padder" href="#"
+						onclick="geojsonvisible=togglegeojson(addgeojson,geojsonvisible);">Toggle
+						GeoJson/Shapefile</a>
+
+					<a class="nav-link navbarelement padder" href="ProjectFiles.zip" download>Download Files</a>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<div id='map'></div>
+	<script src='Js/app.js'></script>
 </body>
 
 </html>
