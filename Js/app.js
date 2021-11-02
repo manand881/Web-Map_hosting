@@ -40,7 +40,7 @@ var latlngs = [
     [12.959342837217665, 77.48609080910683],
     [12.959034397810413, 77.48602375388145]];
 
-var addgeojson = L.polygon(latlngs, { color: 'red' }).addTo(map);
+var addgeojson = L.polygon(latlngs, { color: 'red', }).addTo(map);
 
 // functions
 function toggleorthophoto(addortho, orthophotovisible) {
@@ -74,11 +74,11 @@ function toggledem(adddem, demvisible) {
 function togglegeojson(addgeojson, geojsonvisible) {
     console.log("here");
     if (geojsonvisible === false) {
-        addgeojson.opacity(1);
+        addgeojson.removeFrom(map);
         geojsonvisible = true;
     }
     else {
-        addgeojson.opacity(0);
+        addgeojson.addTo(map);
         geojsonvisible = false;
     }
 
